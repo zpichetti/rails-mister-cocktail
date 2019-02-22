@@ -1,0 +1,41 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= @cocktail.image_url %>);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <div class="row">
+        <div class="col-sm-8">
+          <div class="bloc-gris">
+            <h3>Instruction :</h3>
+            <p><%= @cocktail.description %></p>
+          </div>
+          <div class="bloc-gris">
+            <h3>Detail :</h3>
+            <p><%= @cocktail.glass %></p>
+            <p><%= @cocktail.category %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="bloc-gris">
+            <h3>Ingredients</h3>
+            <ul>
+              <% @cocktail.doses.each do |ingredient| %>
+                <li><%= ingredient.description %> - <%=ingredient.ingredient.name %></li>
+              <% end %>
+            </ul>
+            <hr>
+            <div class="text-center">Add</div>
+            <%= simple_form_for([@cocktail,@dose]) do |f| %>
+              <%= f.association :ingredient %>
+              <%= f.input :description %>
+              <%= f.submit "Add ingredient", class: "btn btn-primary btn-block" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<%= link_to "return to the list", cocktails_path  %>
+<%= link_to cocktail_path(@cocktail),
+method: :delete,
+data: { confirm: "Are you sure?" } do %>
+  remove
+<% end %>

@@ -1,0 +1,31 @@
+.bloc-gris p {
+  font-size: 20px;
+  color: white;
+  opacity: 1;
+}
+
+.bloc-gris h3 {
+  margin-top: 12.5px;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+
+.bloc-gris hr {
+  color: white;
+}
+
+.bloc-gris li {
+  color: white;
+  text-decoration: none;
+}
+
+.bloc-gris{
+  padding: 20px;
+  margin: 20px 0px;
+  background-color:rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+}
+

@@ -1,0 +1,26 @@
+.carousel-example-generic{
+  width: 200px;
+}
+
+.img-carousel {
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  position: relative;
+}
+
+.carousel-text{
+  position: absolute;
+  font-size: 40px;
+  color:white;
+  bottom: 20px;
+  right: 80px;
+}
+.carousel-text a{
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+  &:hover {
+    color: lightgray;
+    text-decoration: none;
+  }
+}
