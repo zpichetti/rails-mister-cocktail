@@ -43,10 +43,12 @@
 
 <div class="container">
   <h1 class="text-center">List  Cocktails (<%= @cocktails.count  %>)</h1>
+  <div class="text-center">
   <span class="label label-info list-tag"><%= link_to "All", "/cocktails/" %> </span>&nbsp;
-  <% @tags.each do |tag| %>
-    <span class="label label-info list-tag"><%= link_to tag, "/cocktails/?query=#{tag}" %> </span>&nbsp;	
-  <% end %>
+    <% @tags.each do |tag| %>
+      <span class="label label-info list-tag"><%= link_to tag, "/cocktails/?query=#{tag}" %> </span>&nbsp;	
+    <% end %>
+  </div>
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="cards col-sm-4 col-xs-12">

@@ -4,7 +4,7 @@ class CocktailsController < ApplicationController
     if params[:query]
       @cocktails = Cocktail.where("category LIKE ?", "%#{params[:query]}%")
     elsif params[:ingredient] && params[:ingredient] != ""
-      @cocktails = Cocktail.joins(doses: :ingredient).where("ingredients.name LIKE ?", "%#{params[:ingredient]}%")
+      @cocktails = Cocktail.joins(doses: :ingredient).where("ingredients.name LIKE ?", "%#{params[:ingredient].capitalize}%")
       @cocktails = Cocktail.all if @cocktails.empty?
     else
       @cocktails = Cocktail.order(:name)
