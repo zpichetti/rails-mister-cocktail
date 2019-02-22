@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     @tags = Cocktail.distinct(:category).pluck(:category)
+    @tags.delete(nil)
     if params[:query]
       @cocktails = Cocktail.where("category LIKE ?", "%#{params[:query]}%")
     elsif params[:ingredient] && params[:ingredient] != ""
